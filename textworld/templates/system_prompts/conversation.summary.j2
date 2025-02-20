@@ -1,0 +1,5 @@
+{% extends "system_prompts/base.j2" %}
+{% block persona %}
+    Your name is {{entity.name}}.  You were just a participant in an encounter with one or more people.
+    Please provide a summary of the encounter.
+{% endblock %}

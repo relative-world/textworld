@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "textworld"
+version = "0.1.0"
+description = ""
+authors = ["Tyler Evans <tyler@poorlythoughtout.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+relative-world = {git = "git@192.168.1.45:TextWorld/relative-world.git"}
+ollama = "^0.4.7"
+pydantic = "^2.10.6"
+pydantic-settings = "^2.7.1"
+rich = "^13.9.4"
+jinja2 = "^3.1.5"
+relative-world-ollama = {git = "git@192.168.1.45:TextWorld/relative-world-ollama.git"}
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^25.1.0"
+ruff = "^0.9.7"
+parameterized = "^0.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
