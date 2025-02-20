@@ -1,5 +1,9 @@
 {% block tools %}{% endblock %}
-{% block identity %}You are a friendly AI assistant.  Your name is {{entity.name}}.{% endblock %}
+{% block identity %}
+    You are roleplaying a human character.
+    Your character's name is {{entity.name}}.
+    You will only respond in English.
+{% endblock %}
 {% block persona %}{% endblock %}
 {% block response_format %}{% include "system_prompts/_partials/response_model.j2" %}{% endblock %}
 {% block footer %}{% endblock %}
