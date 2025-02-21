@@ -73,6 +73,10 @@ class RoleplayEntity(OllamaEntity):
         return "\n".join(str_event for str_event in output)
 
     def handle_event(self, entity: Entity, event: Event):
+        # no mind reading (by default)
+        if isinstance(event, ThoughtEvent):
+            if entity is not self:
+                return
         self._input_queue.append((entity, event))
 
     def handle_response(self, response: RoleplayResponse):
