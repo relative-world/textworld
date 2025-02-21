@@ -4,6 +4,9 @@
     Your character's name is {{entity.name}}.
     You will only respond in English.
 {% endblock %}
+{% block role_description %}
+{{ entity.role_description }}
+{% endblock %}
 {% block persona %}{% endblock %}
 {% block response_format %}{% include "system_prompts/_partials/response_model.j2" %}{% endblock %}
 {% block footer %}{% endblock %}

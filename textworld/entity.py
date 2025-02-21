@@ -16,6 +16,14 @@ action_logger = logging.getLogger("actions")
 
 class RoleplayEntity(OllamaEntity):
     response_model = RoleplayResponse
+    role_description: str = (
+        "A roleplay entity that can engage in conversation and actions."
+    )
+
+    chat_color: str = "blue"
+    thought_color: str = "dark_green"
+    action_color: str = "green"
+
     _event_log: list[BoundEvent] = []
     _input_queue: list[BoundEvent] = []
 
@@ -47,7 +55,10 @@ class RoleplayEntity(OllamaEntity):
             event_log = event_log + self._input_queue
         return json.dumps(
             [
-                {"entity": entity.model_dump(), "event": event.model_dump()}
+                {
+                    "entity": entity.model_dump(include={"id", "name"}),
+                    "event": event.model_dump_json(),
+                }
                 for entity, event in event_log
             ]
         )
@@ -56,16 +67,24 @@ class RoleplayEntity(OllamaEntity):
         self._input_queue.append((entity, event))
 
     def handle_response(self, response: RoleplayResponse):
+        log_msg_template = "[{}]{}[/]"
         if response.response:
             self.emit_event(SaidAloudEvent(context={"message": response.response}))
-            chat_logger.info("%s :: %s", self.name, response.response)
+            msg = log_msg_template.format(self.chat_color, "%s :: %s")
+            chat_logger.info(msg, self.name, response.response, extra={"markup": True})
 
         if response.private_thought:
-            thought_logger.info("%s :: %s", self.name, response.private_thought)
+            msg = log_msg_template.format(self.thought_color, "%s :: %s")
+            thought_logger.info(
+                msg, self.name, response.private_thought, extra={"markup": True}
+            )
 
         if response.action:
             self.emit_event(PerformedActionEvent(context={"action": response.action}))
-            action_logger.info("%s :: %s", self.name, response.action)
+            msg = log_msg_template.format(self.action_color, "%s :: %s")
+            action_logger.info(
+                msg, self.name, response.action, extra={"markup": True}
+            )
 
         return super().handle_response(response)
 
