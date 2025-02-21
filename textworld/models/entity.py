@@ -3,8 +3,8 @@ import logging
 from relative_world.entity import Entity, BoundEvent
 from relative_world.event import Event
 from relative_world_ollama.entity import OllamaEntity
-from textworld.events import SaidAloudEvent, PerformedActionEvent, ThoughtEvent
-from textworld.models import RoleplayResponse, SummarizationResponse
+from textworld.models.events import SaidAloudEvent, PerformedActionEvent, ThoughtEvent
+from textworld.models.responses import RoleplayResponse, SummarizationResponse
 from textworld.templating import render_template
 
 chat_logger = logging.getLogger("chat")

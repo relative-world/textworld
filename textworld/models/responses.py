@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class RoleplayResponse(BaseModel):
-    response: Annotated[str | None, Field(description="Something you are saying aloud.")]
+    response: Annotated[str | None, Field(description="Something you are saying aloud.")] = None
     private_thought: Annotated[
         str | None, Field(description="Your private thoughts in the moment.")
     ] = None
@@ -19,4 +19,4 @@ class SummarizationResponse(BaseModel):
     participants: Annotated[
         list[str], Field(description="The participants in the conversation.")
     ]
-    location: Annotated[str, Field(description="The location of the conversation.")]
+    location: Annotated[str, Field(description="The location of the conversation.")] = "Unknown"

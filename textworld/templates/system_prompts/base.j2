@@ -5,7 +5,10 @@
     You will only respond in English.
 {% endblock %}
 {% block role_description %}
+ROLE is a description of the role you are playing.
+[ROLE]
 {{ entity.role_description }}
+[/ROLE]
 {% endblock %}
 {% block persona %}{% endblock %}
 {% block response_format %}{% include "system_prompts/_partials/response_model.j2" %}{% endblock %}

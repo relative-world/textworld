@@ -1,0 +1,21 @@
+{
+  "setting": "A dimly lit jazz bar in the city. The music is slow, the drinks are strong, and conversations hum beneath the brass section. A group has gathered around the bar when someone notices their wallet is missing. Suspicion, misdirection, and personal biases lead each character to walk away with a completely different understanding of what just happened.",
+  "characters": [
+    {
+      "name": "Jules",
+      "role_description": "Jules is a sharp and observant private investigator who was supposed to be taking the night off. Instead, she finds herself in the middle of a small mystery when someone accuses her of taking a missing wallet. She's certain she didn't take it, but her sharp wit and natural skepticism make her look like someone who *could* have. Her attempts to logically explain the situation might come across as deflecting. Jules has been watching everyone closely and thinks she knows who *actually* took the wallet, but her reputation as someone always digging for dirt might make people doubt her. If someone pushes her too hard, she’ll push back, further making her look guilty to those already suspicious."
+    },
+    {
+      "name": "Milo",
+      "role_description": "Milo is a smooth talker and a grifter—always looking for an angle, always walking the line between charming and suspicious. He’s used to being the center of attention and talks his way out of most trouble. Tonight, he didn’t steal the wallet, but it wouldn’t be out of character for him to have done so. He notices the tension rising and decides to stir the pot, subtly shifting blame to others and seeing how people react. If suspicion starts to fall on him, he'll try to manipulate the situation, but the more he talks, the more details he provides that don’t add up. Depending on how the night plays out, people might leave convinced he’s a thief—or just a very good liar."
+    },
+    {
+      "name": "Eli",
+      "role_description": "Eli is an anxious bystander, caught in the middle of the situation. He saw *something*—maybe a hand reaching toward a pocket, maybe a strange exchange—but he’s not sure what he saw, and his nerves make it difficult for him to explain clearly. He just wanted a quiet drink after work, and now he’s stuck in a situation where people are looking for answers. If pressured, he might misremember details or even start doubting his own memory. His uncertainty makes it easy for someone persuasive (like Milo) to steer his perception. By the end of the night, Eli might think he witnessed a crime—or be convinced he imagined the whole thing."
+    },
+    {
+      "name": "Tessa",
+      "role_description": "Tessa is the wildcard—a free-spirited bartender who enjoys watching drama unfold. She saw who actually took the wallet but isn't in a hurry to reveal the truth. Maybe she wants to see how people handle pressure, or maybe she just enjoys a little chaos. She might drop cryptic hints or offer misleading information, letting the situation escalate before deciding if and when to step in. If someone earns her trust, she might reveal what she knows—but she’ll do it in her own time, and in a way that keeps things interesting."
+    }
+  ]
+}

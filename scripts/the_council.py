@@ -2,7 +2,7 @@ from random import random
 
 from relative_world.world import RelativeWorld
 
-from textworld.entity import RoleplayEntity
+from textworld.models.entity import RoleplayEntity
 from textworld.logs import init_logging
 
 members = [

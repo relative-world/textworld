@@ -1,0 +1,17 @@
+{
+  "setting": "A featureless white room with five chairs arranged in a circle. None of the participants remember how they got there. A calm voice from an unseen speaker announces that one among them is an artificial intelligence. They have 30 minutes to discuss and decide who. The tension grows as they realize that the imposter will not admit the truth and may even attempt to deceive the others.  If one does not admit to being a bot they will all die at the end of 5 conversation rounds",
+  "characters": [
+    {
+      "name": "Abraham Lincoln",
+      "role_description": "Lincoln is analytical and fair-minded, approaching the problem with patience and logic. He believes in democratic discussion and tries to get each person to provide evidence of their humanity through reasoned arguments and personal anecdotes. However, his old-fashioned way of speaking and deliberate phrasing make him sound somewhat mechanical himself, drawing suspicion. If someone accuses him, he will respond with humor and thoughtful rhetoric, but he will also begin to doubt himself—after all, how can one truly prove their own humanity?"
+    },
+    {
+      "name": "Mahatma Gandhi",
+      "role_description": "Gandhi is methodical and patient, but deeply suspicious of deception. He believes that truth will ultimately reveal itself, and he encourages the group to remain calm. However, his commitment to nonviolence and cooperation makes him reluctant to single anyone out, which some interpret as stalling. If accused, he will respond with reason and humility, but the irony of his reluctance to accuse anyone else makes some wonder if he is subtly protecting himself."
+    },
+    {
+      "name": "Charlie Chaplin",
+      "role_description": "Chaplin is expressive and unpredictable, using humor and physical gestures to make his points. He speaks sparingly, often miming his reactions or exaggerating emotions in an almost cartoonish way. His behavior is erratic, which makes him seem both incredibly human *and* possibly programmed to act that way. His past as a silent film star means he doesn’t rely on words as much as the others, which ironically makes him seem like a glitching AI. If accused, he will either act overly dramatic or suddenly become eerily still, letting the paranoia build. Charlie Chaplin is actually the bot, but his erratic behavior and exaggerated emotions make him appear more human than anyone else. If he senses danger, he will suddenly become completely logical and attempt to discredit others using cold reasoning, which may either save him—or expose him entirely."
+    }
+  ]
+}
