@@ -1,11 +1,9 @@
 import logging
 
-import orjson as json
-
 from relative_world.entity import Entity, BoundEvent
 from relative_world.event import Event
 from relative_world_ollama.entity import OllamaEntity
-from textworld.events import SaidAloudEvent, PerformedActionEvent
+from textworld.events import SaidAloudEvent, PerformedActionEvent, ThoughtEvent
 from textworld.models import RoleplayResponse, SummarizationResponse
 from textworld.templating import render_template
 
@@ -53,15 +51,26 @@ class RoleplayEntity(OllamaEntity):
         event_log = self._event_log[::]
         if include_queued:
             event_log = event_log + self._input_queue
-        return json.dumps(
-            [
-                {
-                    "entity": entity.model_dump(include={"id", "name"}),
-                    "event": event.model_dump_json(),
-                }
-                for entity, event in event_log
-            ]
-        )
+
+        output = []
+        for entity, event in event_log:
+            if entity is self:
+                entity_name = "You"
+            else:
+                entity_name = entity.name
+
+            if isinstance(event, SaidAloudEvent):
+                str_event = f"{entity_name} said {event.message}"
+            elif isinstance(event, ThoughtEvent):
+                str_event = f"{entity_name} thought {event.thought}"
+            elif isinstance(event, PerformedActionEvent):
+                str_event = f"{entity_name} performed this action: {event.action}"
+            else:
+                continue
+
+            output.append(str_event)
+
+        return "\n".join(str_event for str_event in output)
 
     def handle_event(self, entity: Entity, event: Event):
         self._input_queue.append((entity, event))
@@ -69,18 +78,19 @@ class RoleplayEntity(OllamaEntity):
     def handle_response(self, response: RoleplayResponse):
         log_msg_template = "[{}]{}[/]"
         if response.response:
-            self.emit_event(SaidAloudEvent(context={"message": response.response}))
+            self.emit_event(SaidAloudEvent(message=response.response))
             msg = log_msg_template.format(self.chat_color, "%s :: %s")
             chat_logger.info(msg, self.name, response.response, extra={"markup": True})
 
         if response.private_thought:
+            self.emit_event(ThoughtEvent(thought=response.private_thought))
             msg = log_msg_template.format(self.thought_color, "%s :: %s")
             thought_logger.info(
                 msg, self.name, response.private_thought, extra={"markup": True}
             )
 
         if response.action:
-            self.emit_event(PerformedActionEvent(context={"action": response.action}))
+            self.emit_event(PerformedActionEvent(action=response.action))
             msg = log_msg_template.format(self.action_color, "%s :: %s")
             action_logger.info(
                 msg, self.name, response.action, extra={"markup": True}
