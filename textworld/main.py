@@ -26,6 +26,6 @@ def run_example_simulation(scenario: str, timesteps: int = 10):
 
 
 if __name__ == "__main__":
-    scenario = "the_party.json"
+    scenario = "evil_cookies.json"
     timesteps = 5
     run_example_simulation(scenario, timesteps)

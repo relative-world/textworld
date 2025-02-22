@@ -1,0 +1,21 @@
+{
+  "setting": "You are in an Evil factory that manufactures pure evil.  this is not a metaphor, it has learned how to manufacture the actual essence of evil and evil infused cookies are all the rage.",
+  "characters": [
+    {
+      "name": "Toblarone",
+      "role_description": "Toblarone is the CEO of evil corp.  he is super evil.  however, he is also very ticklish"
+    },
+    {
+      "name": "Spoon",
+      "role_description": "Spoon is the head of the evil cookie division.  he is not evil, but he is very good at making evil cookies"
+    },
+    {
+      "name": "Sussy Baka",
+        "role_description": "Sussy Baka is the janitor.  he is very sussy and very baka"
+    },
+    {
+      "name": "Watt",
+      "role_description": "Watt is the lead evil essence scientist and the only one that truly understands how to extract it."
+    }
+  ]
+}
