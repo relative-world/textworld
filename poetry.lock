@@ -753,9 +753,9 @@ pydantic = "^2.10.6"
 
 [package.source]
 type = "git"
-url = "git@192.168.1.45:TextWorld/relative-world.git"
+url = "https://github.com/relative-world/relative-world.git"
 reference = "HEAD"
-resolved_reference = "5a82492a5a79ff89e324c59ece6ebc2a339573ac"
+resolved_reference = "23b5c4df941900ce5c8443677670271e15a33f59"
 
 [[package]]
 name = "relative-world-ollama"
@@ -770,13 +770,13 @@ develop = false
 ollama = "^0.4.7"
 pydantic = "^2.10.6"
 pydantic-settings = "^2.7.1"
-relative-world = {git = "git@192.168.1.45:TextWorld/relative-world.git"}
+relative-world = {git = "https://github.com/relative-world/relative-world.git"}
 
 [package.source]
 type = "git"
-url = "git@192.168.1.45:TextWorld/relative-world-ollama.git"
+url = "https://github.com/relative-world/relative-world-ollama.git"
 reference = "HEAD"
-resolved_reference = "91e223fdf016ccbf6b623dfaded62f09b6cc0b05"
+resolved_reference = "a09913f301b957e7e3c44c7054b061b63088bd04"
 
 [[package]]
 name = "rich"
@@ -859,4 +859,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "3e0045b8241edf249f970518a8145bbe0e5ee4e89966d2b861c1eeb5a597bd02"
+content-hash = "561ad4f34114eefe78fcebabc008cc17c6f633ac2fc4ef4ea3d8260a64637ed5"
