@@ -36,16 +36,18 @@ class TheGameScreen(Screen):
         """Called when the game screen loads.  schedules screen updates for 12fps."""
         self.set_interval(1 / 12, self.update_runtime)
 
-    def update_runtime(self):
+    async def update_runtime(self):
         if not self.paused:
             self.runtime = monotonic() - self.start_time
-            self.app.schedule_update()
+            await self.app.schedule_update()
 
     def on_screen_suspend(self) -> None:
         self.paused = True
 
     def on_screen_resume(self) -> None:
         self.paused = False
+        self.start_time = monotonic()
+        self.runtime = 0
 
     def compose(self) -> ComposeResult:
         yield Header(id="Header")

@@ -1,8 +1,7 @@
-import threading
-
-from textual.app import App
+import asyncio
 
 from relative_world.world import RelativeWorld
+from textual.app import App
 from textworld.tui.screens.game import TheGameScreen
 from textworld.tui.screens.mainmenu import MainMenuScreen
 
@@ -32,14 +31,14 @@ class TextWorldApp(App):
         self.world = self._world.model_copy()
         self.push_screen(TheGameScreen())
 
-    def schedule_update(self):
+    async def schedule_update(self):
         if not self._world_updating:
             self._world_updating = True
-            threading.Thread(target=self._update_world).start()
+            await self._update_world()
 
-    def _update_world(self):
+    async def _update_world(self):
         try:
-            next(self.world.update())
-        except StopIteration:
+            await asyncio.to_thread(self.world.step)
+        except StopAsyncIteration:
             pass
         self._world_updating = False

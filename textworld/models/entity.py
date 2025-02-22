@@ -1,5 +1,3 @@
-# textworld/models/entity.py
-
 import logging
 
 from relative_world.entity import Entity, BoundEvent
@@ -107,7 +105,7 @@ class RoleplayEntity(OllamaEntity):
 
         return "\n".join(output)
 
-    def handle_event(self, entity: Entity, event: Event):
+    async def handle_event(self, entity: Entity, event: Event):
         """
         Process an incoming event from a given entity without mind reading.
 
@@ -121,7 +119,7 @@ class RoleplayEntity(OllamaEntity):
                 return
         self._input_queue.append((entity, event))
 
-    def handle_response(self, response: RoleplayResponse):
+    async def handle_response(self, response: RoleplayResponse):
         """
         Handle a roleplay response by emitting the corresponding events and logging them.
 
@@ -149,9 +147,9 @@ class RoleplayEntity(OllamaEntity):
                 msg, self.name, response.action, extra={"markup": True}
             )
 
-        return super().handle_response(response)
+        return await super().handle_response(response)
 
-    def summarize_conversation(self) -> SummarizationResponse:
+    async def summarize_conversation(self) -> SummarizationResponse:
         """
         Generate a summarization of the conversation based on the event log.
 
@@ -165,7 +163,7 @@ class RoleplayEntity(OllamaEntity):
             response_model=SummarizationResponse,
         )
 
-        return self.ollama_client.generate(
+        return await self.ollama_client.generate(
             prompt=self.render_event_log(include_queued=True),
             system=system_prompt,
             response_model=SummarizationResponse,
