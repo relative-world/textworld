@@ -755,7 +755,7 @@ pydantic = "^2.10.6"
 type = "git"
 url = "https://github.com/relative-world/relative-world.git"
 reference = "HEAD"
-resolved_reference = "23b5c4df941900ce5c8443677670271e15a33f59"
+resolved_reference = "9d29a4b15908e54ab5aef3de36eca0c7294edb3b"
 
 [[package]]
 name = "relative-world-ollama"
@@ -776,7 +776,7 @@ relative-world = {git = "https://github.com/relative-world/relative-world.git"}
 type = "git"
 url = "https://github.com/relative-world/relative-world-ollama.git"
 reference = "HEAD"
-resolved_reference = "a09913f301b957e7e3c44c7054b061b63088bd04"
+resolved_reference = "a315350c84d49d2970c0044c88f296a936c264b8"
 
 [[package]]
 name = "rich"
