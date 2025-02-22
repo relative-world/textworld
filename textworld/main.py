@@ -7,7 +7,7 @@ def run_example_simulation(scenario: str, timesteps: int = 10):
     init_logging()
 
     scenario = load_scenario_from_asset(scenario)
-    setting_description = "\nScene Setting: {scenario.setting}"
+    setting_description = f"\nScene Setting: {scenario.setting}"
     for actor in scenario.characters:
         print("Loaded character:", actor.name)
         actor.role_description += setting_description
