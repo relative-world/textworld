@@ -7,6 +7,7 @@ class GameMenuScreen(Screen):
     CSS = """
         GameMenuScreen {
             align: center middle;
+            background: rgba(0,0,0,0.5);
         }
     """
 
