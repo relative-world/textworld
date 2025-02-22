@@ -1,12 +1,6 @@
 from relative_world.world import RelativeWorld
-from textworld.io import load_json_asset
+from textworld.io import load_scenario_from_asset
 from textworld.logs import init_logging
-from textworld.models.scenario import RoleplayScenario
-
-
-def load_scenario_from_asset(filename: str):
-    data = load_json_asset(filename)
-    return RoleplayScenario.model_validate(data)
 
 
 def run_example_simulation(scenario: str, timesteps: int = 10):
@@ -32,6 +26,6 @@ def run_example_simulation(scenario: str, timesteps: int = 10):
 
 
 if __name__ == "__main__":
-    scenario = "the_bot.json"
+    scenario = "the_party.json"
     timesteps = 5
     run_example_simulation(scenario, timesteps)
