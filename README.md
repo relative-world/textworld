@@ -1,11 +1,18 @@
-# Relative World Ollama
+# textworld
 
-This project extends the `relative-world` project by providing an interface to the 
-Ollama API, allowing LLMs to generate and handle events.
+textworld is a Python simulation demonstrating how to use Relative World and ollama to enable realtime conversations between AI entities. In this project, AI entities hold conversations and remember previous exchanges so they can participate in dynamic storytelling activities.
+
+## Overview
+
+textworld extends the core functionalities of relative world by integrating the Ollama API. It allows you to:
+
+- Simulate realtime conversations between AI-driven entities.
+- Persist conversations so entities have memory of past events.
+- Perform storytelling activities within a dynamic simulation world.
 
 ## Installation
 
-To install the project dependencies, use [Poetry](https://python-poetry.org/):
+The project uses [Poetry](https://python-poetry.org/) for dependency management. Install the project dependencies by running:
 
 ```sh
 poetry install
@@ -13,28 +20,37 @@ poetry install
 
 ## Running Tests
 
-To run the tests, use:
+Tests are implemented using [pytest](https://docs.pytest.org/). To run the test suite, execute:
 
 ```sh
 poetry run pytest
 ```
 
-## Core Classes
+## Usage
 
-### Entity
+The main simulation example is defined in the `textworld/main.py` file. In this example, a scenario is loaded and used as the basis for conversation between AI entities. Each entity interacts via events handled by the underlying relative world framework.
 
-The `Entity` class represents a core component in the system. It is designed to interact with the Ollama API to generate responses based on prompts. The `Entity` class includes methods for generating prompts, handling responses, and updating the entity state.
+To run the simulation example:
 
-### Event
+```sh
+poetry run python textworld/main.py
+```
 
-The `Event` class represents events that can be processed by entities. Events are used to trigger actions and handle responses within the system.
+## How It Works
 
-## Examples
+- **Entities and Events:**  
+  Entities represent AI participants in the simulation. Each entity is capable of generating and processing events. The events (such as spoken dialogue, actions, and thoughts) create an evolving narrative.
 
+- **Relative World:**  
+  The simulation world is managed by relative world, a framework that applies time-stepped updates to simulate dynamic interactions. Events propagate through the world, allowing for coordinated conversations between entities.
 
-it's not a guarantee, but it comes in handy when you're using shitty models.  
-This is applied automatically by the `PydanticOllamaClient` as necessary.
+- **Ollama Integration:**  
+  The ollama integration enables AI-driven responses. With the memory of previous events, entities can generate coherent responses and build stories over time.
+
+## Contributing
+
+Contributions are welcome. Please use pull requests to submit improvements and bug fixes.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
