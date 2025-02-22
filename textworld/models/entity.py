@@ -1,3 +1,5 @@
+# textworld/models/entity.py
+
 import logging
 
 from relative_world.entity import Entity, BoundEvent
@@ -13,11 +15,22 @@ action_logger = logging.getLogger("actions")
 
 
 class RoleplayEntity(OllamaEntity):
+    """
+    A roleplay entity capable of engaging in conversation and performing actions.
+
+    Attributes:
+        response_model: Model used for validating roleplay responses.
+        role_description: Description defining the entity's role.
+        chat_color: Color for chat logging.
+        thought_color: Color for thought logging.
+        action_color: Color for action logging.
+        _event_log: List of bound events that have already been processed.
+        _input_queue: Queue for incoming events pending processing.
+    """
     response_model = RoleplayResponse
     role_description: str = (
         "A roleplay entity that can engage in conversation and actions."
     )
-
     chat_color: str = "blue"
     thought_color: str = "dark_green"
     action_color: str = "green"
@@ -26,6 +39,13 @@ class RoleplayEntity(OllamaEntity):
     _input_queue: list[BoundEvent] = []
 
     def get_prompt(self):
+        """
+        Generate a prompt based on the queued input events.
+
+        Returns:
+            str: A concatenated string of events from the input queue. If no events are queued,
+                 returns a default prompt.
+        """
         if self._input_queue:
             input_queue, self._input_queue = self._input_queue, []
             prompt = "\n".join(
@@ -37,6 +57,12 @@ class RoleplayEntity(OllamaEntity):
         return prompt
 
     def get_system_prompt(self):
+        """
+        Generate the system prompt using the current conversation context.
+
+        Returns:
+            str: The rendered system prompt template.
+        """
         context = {"entity": self, "response_model": self.response_model}
 
         if self._event_log:
@@ -48,6 +74,15 @@ class RoleplayEntity(OllamaEntity):
         return render_template(template_name, **context)
 
     def render_event_log(self, include_queued=False):
+        """
+        Render the event log into a human-readable string.
+
+        Args:
+            include_queued (bool): Whether to include queued events in the log rendering.
+
+        Returns:
+            str: The rendered event log.
+        """
         event_log = self._event_log[::]
         if include_queued:
             event_log = event_log + self._input_queue
@@ -70,9 +105,16 @@ class RoleplayEntity(OllamaEntity):
 
             output.append(str_event)
 
-        return "\n".join(str_event for str_event in output)
+        return "\n".join(output)
 
     def handle_event(self, entity: Entity, event: Event):
+        """
+        Process an incoming event from a given entity without mind reading.
+
+        Args:
+            entity (Entity): The entity generating the event.
+            event (Event): The event to be processed.
+        """
         # no mind reading (by default)
         if isinstance(event, ThoughtEvent):
             if entity is not self:
@@ -80,6 +122,13 @@ class RoleplayEntity(OllamaEntity):
         self._input_queue.append((entity, event))
 
     def handle_response(self, response: RoleplayResponse):
+        """
+        Handle a roleplay response by emitting the corresponding events and logging them.
+
+        Args:
+            response (RoleplayResponse): The response object containing spoken words, thoughts,
+                                           and/or actions.
+        """
         log_msg_template = "[{}]{}[/]"
         if response.response:
             self.emit_event(SaidAloudEvent(message=response.response))
@@ -103,6 +152,13 @@ class RoleplayEntity(OllamaEntity):
         return super().handle_response(response)
 
     def summarize_conversation(self) -> SummarizationResponse:
+        """
+        Generate a summarization of the conversation based on the event log.
+
+        Returns:
+            SummarizationResponse: An object containing the conversation summary, tags,
+                                   participants, and location details.
+        """
         system_prompt = render_template(
             "system_prompts/conversation.summary.j2",
             entity=self,
