@@ -17,6 +17,7 @@ relative-world-ollama = {git = "https://github.com/relative-world/relative-world
 python-json-logger = "^3.2.1"
 orjson = "^3.10.15"
 textual = "^2.1.0"
+polyfactory = "^2.19.0"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -1,5 +1,22 @@
 {
   "setting": "A lively party in a trendy city venue, buzzing with music, laughter, and conversation. Charlie and Bob have just approached Alice at the bar. The atmosphere is casual, but hidden tensions are brewing. Charlie and Alice are reconnecting after years apart, while Bob, unaware of Alice’s profession, is unknowingly engaging with the very detective investigating his crimes. Alice, ever observant, notices details about Bob that may connect him to her case. The conversation is lighthearted at first, but every word exchanged carries the potential for revelation.",
+  "locations": [
+    {"name":  "Open air patio", "description":  "A spacious outdoor area with string lights and a view of the city skyline."},
+    {"name":  "Main dance floor", "description":  "A crowded space with a DJ booth and colorful lights."},
+    {"name":  "Bar area", "description":  "A long counter with a variety of drinks and a few barstools."},
+    {"name":  "VIP lounge", "description":  "A secluded area with plush seating and a private bar."},
+    {"name":  "Coat check", "description":  "A small room with a line of people waiting to retrieve their coats."},
+    {"name":  "Restrooms", "description":  "A hallway with separate doors for men and women's restrooms"},
+    {"name":  "Men's Restroom", "description":  "A sleek men's restroom.  There is ice in the urinals."},
+    {"name":  "Women's Restroom", "description":  "A posh women's restroom.  there is an attendant with a tray of mints and perfume."},
+    {"name":  "Kitchen", "description":  "A bustling kitchen with chefs preparing appetizers."},
+    {"name":  "Back alley", "description":  "A dimly lit alley behind the venue."},
+    {"name":  "Parking lot", "description":  "A large parking lot with a few cars and a chain-link fence."},
+    {"name":  "Rooftop", "description":  "A rooftop terrace with a view of the city skyline."},
+    {"name":  "Staircase", "description":  "A grand staircase leading to the second floor."},
+    {"name":  "Second floor", "description":  "A balcony overlooking the main dance floor."},
+    {"name":  "Coat check", "description":  "A small room with a line of people waiting to retrieve their coats."},
+  ],
   "characters": [
     {
       "name": "Charlie",
