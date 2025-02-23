@@ -1,0 +1,200 @@
+{
+  "title": "Stage Struck: The Rise of Max Evans",
+  "genre": "Drama",
+  "medium": "Film",
+  "acts": [
+    {
+      "title": "Act I - The Spark",
+      "description": "Max Evans is a young and ambitious actor from Beaverton, Oregon, who dreams of making it big on Broadway. He works tirelessly at his local community theater but yearns for more.",
+      "key_events": [
+        "Max lands a small role in a summer stock production.",
+        "He meets an established Broadway star, Sarah Thompson, during an audition workshop held in Portland."
+      ],
+      "scenes": [
+        "Introduction to Max's life and dreams",
+        "Community Theater Audition",
+        "Summer Stock Production - Opening Night",
+        "Meeting Sarah Thompson"
+      ],
+      "subplots": [
+        {
+          "title": "Max's Family Support",
+          "purpose": "To illustrate the importance of family in supporting his dream.",
+          "keypoints": [
+            "Mom and Dad are supportive but worried about financial stability.",
+            "Sister struggles to understand Max's commitment."
+          ],
+          "involved_characters": [
+            "Mom",
+            "Dad",
+            "Sister"
+          ],
+          "intersections_with_main": [
+            "Family discussions about the future of the theater"
+          ]
+        },
+        {
+          "title": "Local Theater Community",
+          "purpose": "To show the nurturing environment that helps build Max's skills and confidence.",
+          "keypoints": [
+            "Max learns from veteran actors.",
+            "He struggles with stage fright initially but finds his voice."
+          ],
+          "involved_characters": [
+            "Vet Actor Mike",
+            "Directors"
+          ],
+          "intersections_with_main": [
+            "Advice and encouragement"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Act II - The Struggle",
+      "description": "Max moves to New York with high hopes but faces the harsh reality of competition. He struggles to find roles, working odd jobs while auditioning.",
+      "key_events": [
+        "First NYC job as a waiter in a Broadway cafe.",
+        "Struggling financially and emotionally"
+      ],
+      "scenes": [
+        "Arrival in New York",
+        "Audition for Big Role - Rejection",
+        "Night Shift Job at Cafe",
+        "Hard Times with Friends"
+      ],
+      "subplots": [
+        {
+          "title": "City Living Challenges",
+          "purpose": "To depict the obstacles Max faces while trying to establish himself.",
+          "keypoints": [
+            "Finding affordable housing.",
+            "Nights out with friends for networking."
+          ],
+          "involved_characters": [
+            "Rental Landlord",
+            "Actor Friends"
+          ],
+          "intersections_with_main": [
+            "Support and encouragement"
+          ]
+        },
+        {
+          "title": "Relationship with Sarah",
+          "purpose": "To explore the mentorship dynamic that evolves into more.",
+          "keypoints": [
+            "Sarah offers guidance.",
+            "Developing romantic feelings."
+          ],
+          "involved_characters": [
+            "Sarah Thompson"
+          ],
+          "intersections_with_main": [
+            "Romantic dinners",
+            "Conflicting personal and professional interests"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Act III - The Breakthrough",
+      "description": "Max gets a break when he lands a role in a new musical, leading to his big breakthrough. However, success brings its own challenges.",
+      "key_events": [
+        "Offer for lead role.",
+        "Personal and professional conflicts arise"
+      ],
+      "scenes": [
+        "Breaking News - Offer for Lead Role",
+        "Press Conference",
+        "Conflict with Sarah"
+      ],
+      "subplots": [
+        {
+          "title": "The New Musical",
+          "purpose": "To showcase Max's talent on a bigger stage.",
+          "keypoints": [
+            "Rehearsals.",
+            "Opening night of the musical."
+          ],
+          "involved_characters": [
+            "Co-Lead",
+            "Musical Director"
+          ],
+          "intersections_with_main": [
+            "Collaboration and conflict"
+          ]
+        },
+        {
+          "title": "Family Reunion",
+          "purpose": "To highlight the impact his success has on family relations.",
+          "keypoints": [
+            "Mom and Dad visit during opening week.",
+            "Celebrations with family."
+          ],
+          "involved_characters": [
+            "Mom",
+            "Dad",
+            "Sister"
+          ],
+          "intersections_with_main": [
+            "Emotional moments, pride"
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": [
+    "The pursuit of dreams",
+    "Overcoming challenges",
+    "The power of mentorship"
+  ],
+  "locations": [
+    {
+      "name": "Beaverton Community Theater",
+      "description": "Where Max started his acting journey.",
+      "key_events": [
+        "Community Theater Audition",
+        "Summer Stock Production"
+      ],
+      "notable_inhabitants": [
+        "Vet Actor Mike",
+        "Directors"
+      ],
+      "location_conflicts": []
+    },
+    {
+      "name": "New York City",
+      "description": "The city where Max faces the real challenges of a Broadway actor's life.",
+      "key_events": [
+        "Arrival in New York",
+        "First NYC job as a waiter in a Broadway cafe.",
+        "Audition for Big Role - Rejection"
+      ],
+      "notable_inhabitants": [],
+      "location_conflicts": []
+    }
+  ],
+  "characters": [
+    {
+      "name": "Max Evans",
+      "physical_description": "Tall, slender with expressive green eyes.",
+      "demeanor": "Determined and passionate about acting.",
+      "motivations": [
+        "Making it big on Broadway",
+        "Winning the heart of Sarah Thompson"
+      ],
+      "knowledge": [
+        "Theatre history",
+        "Audition techniques"
+      ],
+      "relationships": {
+        "Sarah Thompson": "Mentor/lover",
+        "Mom": "Supportive but worried",
+        "Dad": "Proud and encouraging"
+      },
+      "character_arc": null
+    }
+  ],
+  "subplots": [],
+  "key_story_events": {}
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Canine Carnage",
+  "genre": "Horror",
+  "medium": "Movie",
+  "themes": [
+    "Survival",
+    "Invasion",
+    "Mutant Lifeforms"
+  ],
+  "locations": [
+    {
+      "name": "Small Town of Eldridge",
+      "description": "A quaint town in the Midwest, seemingly untouched by modernity until a terrifying event unfolds.",
+      "key_events": [
+        "The arrival of mutated dogs",
+        "Mass panic and chaos"
+      ],
+      "notable_inhabitants": [
+        "Mayor Thompson",
+        "Dr. Emily Carter"
+      ],
+      "location_conflicts": [
+        "Mutated dogs versus human townsfolk"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "name": "Tom Harrison",
+      "physical_description": "Tall, with a rugged look and scars on his arms from previous encounters with wild animals.",
+      "demeanor": "Calm under pressure but quick to anger when it comes to protecting the town he loves.",
+      "motivations": [
+        "Protecting Eldridge",
+        "Saving as many people as possible"
+      ],
+      "knowledge": [
+        "Local geography",
+        "Basic first aid skills"
+      ],
+      "relationships": {
+        "Mayor Thompson": "Friend and ally",
+        "Dr. Emily Carter": "Romantic interest and fellow survivor"
+      },
+      "character_arc": "From a skeptic of the mutated dogs to a leader fighting for survival."
+    }
+  ],
+  "main_plot": {
+    "Introduction": "A series of strange dog attacks occur in Eldridge, starting with small incidents like pets going missing.",
+    "Inciting Incident": "The town experiences an unprecedented attack by large, aggressive canines that seem almost supernatural.",
+    "Rising Action": "Tom Harrison leads the resistance against the mutant dogs while trying to understand their origins and weaknesses.",
+    "Climax": "A final showdown in the heart of Eldridge as Tom confronts the leader dog who seems intelligent beyond canine capability.",
+    "Falling Action": "With the threat seemingly neutralized, survivors begin the long process of recovery and rebuilding.",
+    "Resolution": "The movie ends with an ambiguous note on whether all threats have truly been eliminated."
+  },
+  "subplots": [
+    {
+      "title": "Dr. Emily Carter's Research",
+      "purpose": "To understand the science behind the canine mutations, possibly offering clues for a cure or neutralizing agent.",
+      "keypoints": [
+        "Researching historical accounts of strange occurrences in Eldridge",
+        "Finding patterns in dog behavior"
+      ],
+      "involved_characters": [
+        "Tom Harrison",
+        "Dr. Emily Carter"
+      ],
+      "intersections_with_main": [
+        "The discovery that the mutant dogs are highly intelligent and may have a hive mind"
+      ]
+    }
+  ],
+  "key_story_events": {
+    "Dog Attacks Escalate": "Initially seen as isolated incidents, the attacks grow in frequency and intensity.",
+    "Emergency Meeting with Town Leaders": "Tom convinces the town leaders to take action against the mutant dogs before it's too late.",
+    "Revelation of Dog Intelligence": "Evidence that these dogs are not just mindless beasts but a highly intelligent threat emerges."
+  }
+}

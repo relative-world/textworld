@@ -1,3 +1,7 @@
+[project]
+name = "textworld"
+description = "A text based... something"
+
 [tool.poetry]
 name = "textworld"
 version = "1.0.1"
@@ -5,19 +9,24 @@ description = ""
 authors = ["Tyler Evans <tyler@poorlythoughtout.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+textworld-story = "textworld.scripts.story:cli"
+textworld-scene = "textworld.scripts.scenario:cli"
+
 [tool.poetry.dependencies]
 python = "^3.12"
-relative-world = {git = "https://github.com/relative-world/relative-world.git"}
 ollama = "^0.4.7"
 pydantic = "^2.10.6"
 pydantic-settings = "^2.7.1"
 rich = "^13.9.4"
 jinja2 = "^3.1.5"
-relative-world-ollama = {git = "https://github.com/relative-world/relative-world-ollama.git"}
 python-json-logger = "^3.2.1"
 orjson = "^3.10.15"
 textual = "^2.1.0"
 polyfactory = "^2.19.0"
+typer = "^0.15.1"
+relative-world = {path = "../relative-world", develop = true}
+relative-world-ollama = {path = "../relative-world-ollama", develop = true}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -25,6 +34,7 @@ pytest = "^8.3.4"
 black = "^25.1.0"
 ruff = "^0.9.7"
 parameterized = "^0.9.0"
+textual-dev = "^1.7.0"
 
 [build-system]
 requires = ["poetry-core"]

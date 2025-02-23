@@ -1,10 +1,11 @@
 from textual.app import ComposeResult
 from textual.containers import Vertical
 from textual.screen import Screen
-from textual.widgets import Header, Footer, ListView, ListItem, Button
+from textual.widgets import Header, Footer, ListView, ListItem, Button, Label
 
 from textworld.io import list_scenarios, load_scenario_from_asset
 from textworld.tui.screens.game import TheGameScreen
+from textworld.tui.screens.mainmenu import MainMenuScreen
 from textworld.tui.utils import slugify
 
 
@@ -21,19 +22,16 @@ class ScenarioLoaderScreen(Screen):
         }
         
         #ScenarioListContainer {
-            width: 30%;
-            align: center middle;
+            width: 50%;
+            height: 50%;
         }
         
-        #ScenarioList {
-            align: center middle;
-        }
-        
-        .scenario-btn {
-            width: 30%;
-            align: center middle
-        }
     """
+
+    BINDINGS = [
+        ("d", "toggle_dark", "Toggle dark mode"),
+        ("escape", "back", "Back"),
+    ]
 
     _scenarios_by_slug = {}
 
@@ -45,16 +43,21 @@ class ScenarioLoaderScreen(Screen):
 
         yield Header(id="Header")
         yield Vertical(
+            Label("Select a scenario to load:", id="ScenarioLoaderLabel"),
             ListView(
-                *[ListItem(Button(scenario, id=slugify(scenario), classes="scenario-btn")) for scenario in scenario_names],
+                *[ListItem(Label(scenario), id=slugify(scenario), classes="scenario-list-item") for scenario in scenario_names],
                 id="ScenarioList"
             ),
             id="ScenarioListContainer"
         )
         yield Footer(id="Footer")
 
-    def on_button_pressed(self, event: Button.Pressed) -> None:
-        scenario = self._scenarios_by_slug[event.button.id]
+    def on_list_view_selected(self, event: ListView.Selected) -> None:
+        scenario = self._scenarios_by_slug[event.item.id]
         self.app.load_scenario(scenario)
-        self.app.pop_screen()  # remove yourself from the screen stack
+        self.app.pop_screen()  # remove ourselves from the screen stack
         self.app.push_screen(TheGameScreen())
+
+    def action_back(self) -> None:
+        self.app.pop_screen()
+        self.app.push_screen(MainMenuScreen())

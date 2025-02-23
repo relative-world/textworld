@@ -1,0 +1,106 @@
+{
+  "scenes": [
+    {
+      "name": "The Town Hall Meeting",
+      "description": "Residents gather to discuss Tom Clark's proposal for revitalizing Sunset Valley.",
+      "location": "Town Hall",
+      "characters": [
+        "Tom Clark",
+        "Mayor Thompson"
+      ],
+      "keypoints": [
+        "Presentation of community projects",
+        "Discussion on economic challenges",
+        "Community debate on the future direction of Sunset Valley"
+      ],
+      "outcomes": [
+        "Agreement on some projects, disagreement on others"
+      ]
+    },
+    {
+      "name": "Library Afternoons",
+      "description": "Tom visits the library to research and plan his proposals with help from Mrs. Johnson.",
+      "location": "Library",
+      "characters": [
+        "Tom Clark",
+        "Mrs. Johnson"
+      ],
+      "keypoints": [
+        "Research on past community initiatives",
+        "Discussion of potential for revitalization",
+        "Supportive conversation about town's future"
+      ],
+      "outcomes": [
+        "Gathering of historical data and inspiration"
+      ]
+    },
+    {
+      "name": "Main Street Revival Discussion",
+      "description": "Tom meets with shop owners and residents to gauge support for his plans.",
+      "location": "Main Street",
+      "characters": [
+        "Tom Clark",
+        "Local Shop Owners"
+      ],
+      "keypoints": [
+        "Showcase of revitalization ideas",
+        "Addressing concerns about change",
+        "Building a coalition for community improvement"
+      ],
+      "outcomes": [
+        "Increased local buy-in for projects"
+      ]
+    },
+    {
+      "name": "Old Factory Visit",
+      "description": "Tom explores the abandoned factory, envisioning its potential transformation.",
+      "location": "Old Factory",
+      "characters": [
+        "Tom Clark"
+      ],
+      "keypoints": [
+        "Reflection on past prosperity",
+        "Visualization of future possibilities",
+        "Consideration of challenges"
+      ],
+      "outcomes": [
+        "Motivation to propose conversion into community center"
+      ]
+    },
+    {
+      "name": "Fourth of July Parade Planning Meeting",
+      "description": "Community leaders meet to plan the parade, highlighting the town's resilience.",
+      "location": "Town Hall",
+      "characters": [
+        "Tom Clark",
+        "Mayor Thompson",
+        "Local Leaders"
+      ],
+      "keypoints": [
+        "Discussion on parade themes emphasizing community spirit",
+        "Decisions regarding logistics and funding",
+        "Unity in celebration despite economic struggles"
+      ],
+      "outcomes": [
+        "Successful coordination of event"
+      ]
+    },
+    {
+      "name": "Library Conflict Resolution Session",
+      "description": "Tom and Mayor Thompson discuss their differing visions for Sunset Valley's future.",
+      "location": "Library",
+      "characters": [
+        "Tom Clark",
+        "Mayor Thompson"
+      ],
+      "keypoints": [
+        "Clarification of objectives",
+        "Acknowledgment of opposition",
+        "Finding common ground"
+      ],
+      "outcomes": [
+        "Mutual respect and understanding"
+      ]
+    }
+  ]
+}

@@ -1,10 +1,13 @@
+import uuid
+
 from textual.app import ComposeResult
-from textual.containers import Vertical
+from textual.containers import Container, Vertical
 from textual.reactive import reactive
 from textual.screen import Screen
-from textual.widgets import Header, TabbedContent, TabPane, Label, Digits
+from textual.widgets import Header, Tabs, Tab, Placeholder, Input, Footer
 from time import monotonic
 
+from textworld.tui.components.locationtabcontent import LocationTabContent
 from textworld.tui.screens.gamemenu import GameMenuScreen
 from textworld.tui.utils import slugify
 
@@ -20,6 +23,17 @@ class TheGameScreen(Screen):
     #TabContainer {
         dock: top;
     }
+    
+    #LayoutContainer {
+        layout: grid;
+        grid-size: 2;
+        grid-columns: 4fr 1fr;
+    }
+    
+    .box {
+        height: 100%;
+        border: solid green;
+    }
     """
 
     BINDINGS = [
@@ -31,15 +45,23 @@ class TheGameScreen(Screen):
     runtime = reactive(0.0)
     previous_runtime = 0
     paused = reactive(False)
+    _world_updating = False
 
     def on_mount(self) -> None:
         """Called when the game screen loads.  schedules screen updates for 12fps."""
-        self.set_interval(1 / 12, self.update_runtime)
+        self.set_interval(1, self.update_runtime)
 
-    async def update_runtime(self):
+    def update_runtime(self):
         if not self.paused:
             self.runtime = monotonic() - self.start_time
-            await self.app.schedule_update()
+            self.run_worker(self.schedule_update(), exclusive=False)
+
+    async def schedule_update(self):
+        if not self._world_updating:
+            self._world_updating = True
+            async for event in self.app.world.update():
+                pass
+            self._world_updating = False
 
     def on_screen_suspend(self) -> None:
         self.paused = True
@@ -51,22 +73,25 @@ class TheGameScreen(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
-        with TabbedContent():
-            for location in self.app.world.iter_locations():
-                tab_id = slugify(f"{location.name}-{location.id}")
-
-                with TabPane(f"{location.name} ({location.character_count})", id=tab_id):
-                    yield Vertical(
-                        Label(location.name),
-                        Label(location.description),
-                    )
-                    with TabbedContent():
-                            with TabPane("inner"):
-
-                                yield Vertical(
-                                    Label(location.name),
-                                    Label(location.description),
-                                )
+        yield Vertical(
+            Tabs(*[
+                Tab(f"{location.name} ({location.character_count})", id=slugify(f"{location.name}_demarc_{location.id}"))
+                for location in self.app.world.iter_locations()
+            ]),
+            Container(
+                LocationTabContent(classes="box"),
+                Placeholder(classes="box"),
+                id="LayoutContainer",
+            ),
+            Input(placeholder="Inject Command")
+        )
+        yield Footer()
 
     def action_show_menu(self):
         self.app.push_screen(GameMenuScreen())
+
+    def on_tabs_tab_activated(self, event: Tabs.TabActivated) -> None:
+        location = self.app.world.get_location_by_id(uuid.UUID(event.tab.id.split("_demarc_")[-1].replace('_', '-')))
+        self.query_one(LocationTabContent).set_location(location)
+
+

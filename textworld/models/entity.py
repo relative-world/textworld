@@ -3,6 +3,7 @@ import logging
 from relative_world.entity import Entity, BoundEvent
 from relative_world.event import Event
 from relative_world_ollama.entity import OllamaEntity
+from textworld.models import events
 from textworld.models.events import SaidAloudEvent, PerformedActionEvent, ThoughtEvent
 from textworld.models.responses import RoleplayResponse, SummarizationResponse
 from textworld.templating import render_template
@@ -91,16 +92,16 @@ class RoleplayEntity(OllamaEntity):
                 entity_name = "You"
             else:
                 entity_name = entity.name
-
-            if isinstance(event, SaidAloudEvent):
-                str_event = f"{entity_name} said {event.message}"
-            elif isinstance(event, ThoughtEvent):
-                str_event = f"{entity_name} thought {event.thought}"
-            elif isinstance(event, PerformedActionEvent):
-                str_event = f"{entity_name} performed this action: {event.action}"
-            else:
-                continue
-
+            event_type = type(event)
+            match event_type:
+                case events.SaidAloudEvent:
+                    str_event = f"{entity_name} said {event.message}"
+                case events.ThoughtEvent:
+                    str_event = f"{entity_name} thought {event.thought}"
+                case events.PerformedActionEvent:
+                    str_event = f"{entity_name} performed this action: {event.action}"
+                case _:
+                    continue
             output.append(str_event)
 
         return "\n".join(output)

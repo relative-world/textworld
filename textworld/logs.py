@@ -56,12 +56,12 @@ def init_logging():
                 },
                 "relative_world_ollama": {  # if you want to log from your script
                     "handlers": ["json"],
-                    "level": "DEBUG",
+                    "level": "WARN",
                     "propagate": True,
                 },
                 "relative_world": {  # if you want to log from your script
                     "handlers": ["json"],
-                    "level": "DEBUG",
+                    "level": "WARN",
                     "propagate": True,
                 },
             },

@@ -1,4 +1,7 @@
 import asyncio
+
+import typer
+
 from relative_world.world import RelativeWorld
 from textworld.io import load_scenario_from_asset
 from textworld.logs import init_logging
@@ -26,7 +29,10 @@ async def run_example_simulation(scenario: str, timesteps: int = 10):
         print("=" * 40)
 
 
-if __name__ == "__main__":
-    scenario = "evil_cookies.json"
-    timesteps = 5
-    asyncio.run(run_example_simulation(scenario, timesteps))
+def sync_run_example_simulation(scenario: str, timesteps: int = 10):
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(run_example_simulation(scenario, timesteps))
+
+
+def cli():
+    typer.run(sync_run_example_simulation)
