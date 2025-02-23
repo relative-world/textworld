@@ -1,5 +1,3 @@
-# textworld/models/events.py
-
 from relative_world.event import Event
 
 SAID_ALOUD_EVENT_TYPE = "SAID_ALOUD"

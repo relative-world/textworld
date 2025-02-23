@@ -2,8 +2,10 @@ import asyncio
 
 from relative_world.world import RelativeWorld
 from textual.app import App
-from textworld.tui.screens.game import TheGameScreen
+
+from textworld.io import load_scenario_from_asset
 from textworld.tui.screens.mainmenu import MainMenuScreen
+from textworld.tui.screens.scenarioloader import ScenarioLoaderScreen
 
 
 class TextWorldApp(App):
@@ -28,8 +30,11 @@ class TextWorldApp(App):
         )
 
     def start_new_game(self):
-        self.world = self._world.model_copy()
-        self.push_screen(TheGameScreen())
+        self.push_screen(ScenarioLoaderScreen())
+
+    def load_scenario(self, scenario: str) -> None:
+        self.scenario = load_scenario_from_asset(scenario)
+        self.world = RelativeWorld(children=self.scenario.characters)
 
     async def schedule_update(self):
         if not self._world_updating:
