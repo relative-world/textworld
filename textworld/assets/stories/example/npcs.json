@@ -1,0 +1,44 @@
+{
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "Elias Thorn",
+      "current_location": "Logger's Camp",
+      "description": "A rugged, world-weary lumberjack with a haunted past.",
+      "current_knowledge": [
+        "Saw strange lights deep in the forest last night.",
+        "Knows the camp's supplies are running low."
+      ],
+      "current_motives": [
+        "Find out what’s causing the strange lights.",
+        "Ensure the camp survives the coming winter."
+      ],
+      "long_term_ambitions": [
+        "Retire and live peacefully by the lake.",
+        "Repair his strained relationship with his daughter."
+      ],
+      "relationships": {
+        "npc_2": "Old friend, but they had a falling out.",
+        "npc_3": "Owes them a favor."
+      },
+      "regrets": [
+        "Didn't stop his brother from joining a doomed expedition.",
+        "Never confessed his love to someone who left the camp years ago."
+      ],
+      "personality_traits": ["Loyal", "Stubborn", "Secretive"],
+      "evolution_rules": {
+        "knowledge_updates": "Gains new knowledge through events, rumors, and interactions.",
+        "motive_shifts": "Adapts motives based on world events and player actions.",
+        "relationship_changes": "Strengthens or weakens relationships over time."
+      }
+    }
+  ],
+  "procedural_guidelines": {
+    "npc_variability": {
+      "min": 5,
+      "max": 50
+    },
+    "relationship_types": ["Friend", "Rival", "Mentor", "Debt", "Romantic", "Enemy"],
+    "knowledge_sources": ["Player interactions", "Other NPCs", "Environmental events"]
+  }
+}

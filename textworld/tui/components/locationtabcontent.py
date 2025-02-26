@@ -45,9 +45,10 @@ class LocationTabContent(Widget):
         self.log_actor = LogActor()
         self.log_actor._logger = self
 
-    def on_mount(self) -> None:
-        location = next(self.app.world.iter_locations())
-        self.app.world.add_actor(self.log_actor, location)
+    async def on_mount(self) -> None:
+        location = anext(self.app.world.aiter_locations())
+        self.app.world.add_actor(self.log_actor)
+        self.log_actor.location = self.app.world
 
     def write_to_log(self, message: str):
         self.query_one("#LocationLog", RichLog).write(message)
@@ -55,6 +56,7 @@ class LocationTabContent(Widget):
     def set_location(self, location):
         self.location = location
         location.add_actor(self.log_actor)
+        self.log_actor.location = location
 
     def compose(self) -> ComposeResult:
         yield Vertical(

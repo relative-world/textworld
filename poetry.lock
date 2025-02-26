@@ -1362,7 +1362,7 @@ dev = ["backports.zoneinfo", "black", "build", "freezegun", "mdx_truly_sane_list
 
 [[package]]
 name = "relative-world"
-version = "1.0.0"
+version = "2.0.2"
 description = ""
 optional = false
 python-versions = "^3.12"
@@ -1379,7 +1379,7 @@ url = "../relative-world"
 
 [[package]]
 name = "relative-world-ollama"
-version = "1.0.1"
+version = "2.0.0"
 description = ""
 optional = false
 python-versions = "^3.12"

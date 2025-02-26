@@ -59,8 +59,8 @@ class TheGameScreen(Screen):
     async def schedule_update(self):
         if not self._world_updating:
             self._world_updating = True
-            async for event in self.app.world.update():
-                pass
+            # async for event in self.app.world.update():
+            #     pass
             self._world_updating = False
 
     def on_screen_suspend(self) -> None:
@@ -91,7 +91,7 @@ class TheGameScreen(Screen):
         self.app.push_screen(GameMenuScreen())
 
     def on_tabs_tab_activated(self, event: Tabs.TabActivated) -> None:
-        location = self.app.world.get_location_by_id(uuid.UUID(event.tab.id.split("_demarc_")[-1].replace('_', '-')))
+        location = self.app.world.get_location(uuid.UUID(event.tab.id.split("_demarc_")[-1].replace('_', '-')))
         self.query_one(LocationTabContent).set_location(location)
 
 

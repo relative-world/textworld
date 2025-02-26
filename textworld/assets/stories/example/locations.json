@@ -1,0 +1,56 @@
+{
+  "locations": [
+    {
+      "id": "location_1",
+      "name": "Mystic Forest",
+      "type": "wilderness",
+      "description": "A dense, mist-covered forest filled with ancient secrets.",
+      "sub_locations": [
+        {
+          "id": "sub_1",
+          "name": "Logger's Camp",
+          "type": "settlement",
+          "description": "A small camp where loggers work and trade stories of strange sightings."
+        },
+        {
+          "id": "sub_2",
+          "name": "Fishing Hole",
+          "type": "natural",
+          "description": "A quiet spot by a crystal-clear lake, perfect for fishing or reflection."
+        }
+      ]
+    },
+    {
+      "id": "location_2",
+      "name": "Blackthorn Keep",
+      "type": "fortress",
+      "description": "A foreboding castle perched on a cliffside, home to a reclusive ruler.",
+      "sub_locations": [
+        {
+          "id": "sub_3",
+          "name": "Throne Room",
+          "type": "royal",
+          "description": "An opulent hall where power is wielded with words and steel."
+        },
+        {
+          "id": "sub_4",
+          "name": "Dungeon",
+          "type": "prison",
+          "description": "Dark, damp, and filled with the echoes of those long forgotten."
+        }
+      ]
+    }
+  ],
+  "procedural_guidelines": {
+    "location_types": ["wilderness", "settlement", "fortress", "dungeon", "ruins"],
+    "sub_location_types": ["natural", "settlement", "royal", "prison", "mystical"],
+    "location_count": {
+      "min": 3,
+      "max": 10
+    },
+    "sub_location_count": {
+      "min": 2,
+      "max": 5
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "world": {
+    "locations": [
+      {
+        "name": "Garden",
+        "description": "A beautiful garden with flowers and trees.",
+        "connections": ["House"],
+        "sublocations": [
+          {
+            "name": "Flower Patch",
+            "description": "A vibrant section filled with colorful flowers."
+          },
+          {
+            "name": "Stone Bench",
+            "description": "An old bench under the shade of an oak tree."
+          }
+        ],
+        "items": [
+          {
+            "name": "Golden Apple",
+            "type": "consumable",
+            "description": "A mystical apple said to grant knowledge.",
+            "effects": { "on_use": "Boosts intelligence temporarily." },
+            "rarity": "legendary"
+          }
+        ]
+      },
+      {
+        "name": "House",
+        "description": "A cozy house with many rooms.",
+        "connections": ["Garden", "Market"],
+        "sublocations": [
+          {
+            "name": "Kitchen",
+            "description": "A warm place with the scent of freshly baked bread."
+          },
+          {
+            "name": "Study",
+            "description": "A quiet room filled with ancient books."
+          }
+        ],
+        "items": [
+          {
+            "name": "Old Key",
+            "type": "quest_item",
+            "description": "A rusted key, its purpose unknown.",
+            "effects": { "unlock": "Opens a mysterious locked door." },
+            "rarity": "unique"
+          }
+        ]
+      },
+      {
+        "name": "Market",
+        "description": "A busy marketplace with various vendors.",
+        "connections": ["House"],
+        "sublocations": [
+          {
+            "name": "Blacksmith",
+            "description": "A forge where weapons and armor are crafted."
+          },
+          {
+            "name": "Merchant's Stall",
+            "description": "A small stall selling exotic spices and goods."
+          }
+        ],
+        "items": [
+          {
+            "name": "Silver Dagger",
+            "type": "weapon",
+            "description": "A finely crafted dagger effective against dark creatures.",
+            "properties": { "damage": 8, "weight": 1 },
+            "effects": { "on_hit": "Has a chance to wound spectral beings." },
+            "rarity": "rare"
+          }
+        ]
+      }
+    ],
+    "actors": [
+      {
+        "name": "Alice",
+        "starting_location": "Garden",
+        "knowledge": ["Knows a local legend about the Golden Apple."],
+        "motives": ["Seeking wisdom", "Avoiding danger"],
+        "long_term_ambitions": ["Uncover the garden's secrets"],
+        "relationships": { "Bob": "Respects", "Charlie": "Distrusts" },
+        "regrets": ["Lost a valuable book"],
+        "ai_engine": "goal_based"
+      },
+      {
+        "name": "Bob",
+        "starting_location": "House",
+        "knowledge": ["Understands blacksmithing techniques."],
+        "motives": ["Wants to make a legendary sword"],
+        "long_term_ambitions": ["Become the greatest blacksmith"],
+        "relationships": { "Alice": "Respected colleague", "Charlie": "Friendly rival" },
+        "regrets": ["Failed an important commission"],
+        "ai_engine": "rule_based"
+      },
+      {
+        "name": "Charlie",
+        "starting_location": "Market",
+        "knowledge": ["Knows about a hidden smuggler's route."],
+        "motives": ["Accumulate wealth", "Expand trading influence"],
+        "long_term_ambitions": ["Control the market trade"],
+        "relationships": { "Alice": "Dislikes", "Bob": "Friendly rival" },
+        "regrets": ["Betrayed a former business partner"],
+        "ai_engine": "learning_agent"
+      }
+    ],
+    "player": {
+      "name": "Player",
+      "starting_location": "House",
+      "attributes": {
+        "strength": 5,
+        "dexterity": 7,
+        "intelligence": 6
+      },
+      "inventory": [],
+      "abilities": ["Stealth", "Persuasion"]
+    }
+  }
+}

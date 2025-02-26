@@ -1,0 +1,36 @@
+{
+  "campaign": {
+    "title": "Generated Campaign",
+    "genre": "Fantasy",
+    "theme": ["Exploration", "Mystery"],
+    "world": {
+      "setting": "A vast, uncharted land",
+      "tone": "Dark and atmospheric"
+    },
+    "factions": [
+      {
+        "name": "Generated Faction 1",
+        "alignment": "Neutral",
+        "role": "Power Player"
+      }
+    ],
+    "core_conflict": "An ancient power is awakening, disrupting the balance of the world.",
+    "starting_condition": "The player awakens with no memory of their past.",
+    "procedural_constraints": {
+      "genre_rules": {
+        "Fantasy": {
+          "required_elements": ["Magic", "Ancient Civilizations"],
+          "prohibited_elements": ["Advanced Technology"]
+        },
+        "Sci-Fi": {
+          "required_elements": ["Space Travel", "Artificial Intelligence"],
+          "prohibited_elements": ["Magic"]
+        },
+        "Post-Apocalyptic": {
+          "required_elements": ["Survival Mechanics", "Ruined Civilization"],
+          "prohibited_elements": ["Stable Governments"]
+        }
+      }
+    }
+  }
+}

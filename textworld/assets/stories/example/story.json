@@ -1,0 +1,60 @@
+{
+  "storyline": {
+    "acts": [
+      {
+        "act": 1,
+        "title": "The Awakening",
+        "purpose": "Introduce the world, establish the player's role, and hint at the core conflict.",
+        "story_beats": [
+          {
+            "id": "beat_1",
+            "type": "inciting_incident",
+            "description": "The player experiences a strange event that changes their fate.",
+            "triggers": ["game_start"]
+          },
+          {
+            "id": "beat_2",
+            "type": "first_choice",
+            "description": "The player must choose an allegiance or path that shapes their journey.",
+            "dependencies": ["beat_1"]
+          }
+        ]
+      },
+      {
+        "act": 2,
+        "title": "The Rising Conflict",
+        "purpose": "Escalate tension, introduce factions, and deepen the mystery.",
+        "story_beats": [
+          {
+            "id": "beat_3",
+            "type": "midpoint_reversal",
+            "description": "A revelation changes what the player thought they knew.",
+            "dependencies": ["beat_2"]
+          }
+        ]
+      },
+      {
+        "act": 3,
+        "title": "The Climax",
+        "purpose": "Resolve the main conflict and deliver player agency in the conclusion.",
+        "story_beats": [
+          {
+            "id": "beat_4",
+            "type": "final_confrontation",
+            "description": "The player faces the ultimate decision that determines the fate of the world.",
+            "dependencies": ["beat_3"]
+          }
+        ]
+      }
+    ],
+    "procedural_guidelines": {
+      "act_structure": {
+        "min_acts": 3,
+        "max_acts": 5
+      },
+      "beat_types": ["inciting_incident", "rising_action", "midpoint_reversal", "climax", "resolution"],
+      "theme_integration": true,
+      "player_choices_affect_outcome": true
+    }
+  }
+}

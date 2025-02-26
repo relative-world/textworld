@@ -42,6 +42,8 @@ class TextWorldApp(App):
             description="This is an example location.",
         )
         self.world.add_location(location)
+
         for character in self.scenario.characters:
             actor = RoleplayActor.model_validate(character.model_dump())
-            self.world.add_actor(actor, location)
+            # actor.world = self.world
+            actor.location = location

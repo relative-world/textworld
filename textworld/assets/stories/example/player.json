@@ -1,0 +1,65 @@
+{
+  "player": {
+    "id": "player_1",
+    "name": "Unnamed Wanderer",
+    "background": "A drifter with no past—or at least, none they speak of.",
+    "current_location": "Mystic Forest",
+    "stats": {
+      "strength": 5,
+      "dexterity": 6,
+      "intelligence": 7,
+      "charisma": 4,
+      "luck": 3
+    },
+    "skills": [
+      {
+        "name": "Survival",
+        "level": 3
+      },
+      {
+        "name": "Persuasion",
+        "level": 2
+      },
+      {
+        "name": "Swordsmanship",
+        "level": 4
+      }
+    ],
+    "inventory": [
+      {
+        "item_id": "item_1",
+        "name": "Rusty Dagger",
+        "type": "weapon",
+        "description": "A worn but reliable blade."
+      },
+      {
+        "item_id": "item_2",
+        "name": "Tattered Journal",
+        "type": "quest_item",
+        "description": "Contains notes that don’t seem to be yours."
+      }
+    ],
+    "relationships": {
+      "npc_1": "Distrusts Elias Thorn, but intrigued by his stories."
+    },
+    "current_goals": [
+      "Find shelter before nightfall.",
+      "Discover the truth behind the lights in the forest."
+    ],
+    "long_term_ambitions": [
+      "Uncover their forgotten past.",
+      "Build a reputation as a legendary adventurer."
+    ],
+    "reputation": {
+      "factions": {
+        "Forest Nomads": 10,
+        "Blackthorn Keep Guards": -5
+      }
+    },
+    "evolution_rules": {
+      "stat_growth": "Increases through experience and training.",
+      "skill_improvement": "Gains levels through use and practice.",
+      "relationship_changes": "Evolves based on choices and interactions."
+    }
+  }
+}

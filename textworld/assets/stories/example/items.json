@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "item_1",
+      "name": "Rusty Dagger",
+      "type": "weapon",
+      "description": "A worn but reliable blade, its edge dulled by time.",
+      "properties": {
+        "damage": 5,
+        "durability": 20,
+        "weight": 1
+      },
+      "effects": {
+        "on_hit": "Small chance to cause bleeding."
+      },
+      "rarity": "common"
+    },
+    {
+      "id": "item_2",
+      "name": "Tattered Journal",
+      "type": "quest_item",
+      "description": "Pages filled with strange symbols and frantic notes.",
+      "properties": {
+        "weight": 0.5
+      },
+      "effects": {
+        "on_read": "Reveals a hidden location on the map."
+      },
+      "rarity": "unique"
+    },
+    {
+      "id": "item_3",
+      "name": "Healing Salve",
+      "type": "consumable",
+      "description": "A pungent herbal paste that soothes wounds.",
+      "properties": {
+        "uses": 3,
+        "weight": 0.2
+      },
+      "effects": {
+        "on_use": "Restores 10 health over 5 minutes."
+      },
+      "rarity": "uncommon"
+    },
+    {
+      "id": "item_4",
+      "name": "Enchanted Cloak",
+      "type": "armor",
+      "description": "A flowing cloak infused with protective magic.",
+      "properties": {
+        "defense": 2,
+        "durability": 50,
+        "weight": 1.5
+      },
+      "effects": {
+        "passive": "Reduces detection chance in darkness."
+      },
+      "rarity": "rare"
+    },
+    {
+      "id": "item_5",
+      "name": "Blackthorn Signet Ring",
+      "type": "accessory",
+      "description": "An ornate ring bearing the crest of Blackthorn Keep.",
+      "properties": {
+        "weight": 0.1
+      },
+      "effects": {
+        "passive": "Increases reputation with Blackthorn Keep Guards."
+      },
+      "rarity": "unique"
+    }
+  ],
+  "procedural_guidelines": {
+    "item_types": ["weapon", "armor", "consumable", "quest_item", "accessory", "miscellaneous"],
+    "rarity_levels": ["common", "uncommon", "rare", "unique", "legendary"],
+    "property_ranges": {
+      "damage": { "min": 1, "max": 100 },
+      "defense": { "min": 1, "max": 50 },
+      "durability": { "min": 10, "max": 100 },
+      "weight": { "min": 0.1, "max": 10 }
+    }
+  }
+}
